@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-icon name="arrow-back-outline" class="ion-padding" routerLink="/home"></ion-icon>
+  <div class="main-section">
+    <h3 class="ion-padding">{{isEdit ? 'แก้ไขบันทึกจ่ายตลาด' : 'เพิ่มบันทึกจ่ายตลาด'}}</h3>
+    <div class="form ion-padding ion-margin">
+
+      <ion-select interface="action-sheet" [(ngModel)]="type" placeholder="เลือกประเภท">
+        <ion-select-option value="change">เงินทอน</ion-select-option>
+        <ion-select-option value="expense">ค่าใช้จ่าย</ion-select-option>
+      </ion-select>
+
+      <ion-input placeholder="หัวข้อ" [(ngModel)]="title"></ion-input>
+      <ion-input placeholder="รายละเอียด"[(ngModel)]="subTitle"></ion-input>
+      <ion-input placeholder="จำนวนเงิน" type="number" [(ngModel)]="amount"></ion-input>
+
+      <ion-button color="dark" (click)="addTransaction()">{{isEdit ? 'Edit' : 'Add'}}&nbsp;<ion-spinner *ngIf="loading"></ion-spinner></ion-button>
+
+    </div>
+  </div>
+</ion-content>
