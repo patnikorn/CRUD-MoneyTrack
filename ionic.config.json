@@ -1,0 +1,7 @@
+{
+  "name": "MoneyTrackingApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
